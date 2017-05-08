@@ -1,0 +1,6 @@
+diff a/PHPTraining/20170508/test.php b/PHPTraining/20170508/test.php	(rejected hunks)
+@@ -0,0 +1,4 @@
++<?php
++$a="hello"
++echo $a;
++ ?>
