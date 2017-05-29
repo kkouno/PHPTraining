@@ -27,18 +27,6 @@
                         <th align="center">質問内容</th>
                     </tr>
                 <?php
-                /*
-                    $fp = fopen( "count.csv", "r+" );
-                    while(($str=fgets($fp))!=false){
-                        $data = explode(",",$str);
-                        print "<tr>";
-                        foreach($data as $key => $d){
-                            print "<td align=\"center\">".$d."</td>";
-                        }
-                        print "</tr>";
-                    }
-                    fclose( $fp );
-                */
                     function table_sort($num){
                         global $datas;
                         foreach($datas as $key=>$data){
@@ -46,7 +34,7 @@
                         }
                         array_multisort($tmp,SORT_ASC,$datas);
                     }
-                    $fp = fopen( "count.csv", "r+" );
+                    $fp = fopen( "admin.csv", "r+" );
                     while(($str=fgets($fp))!=false){
                         $datas[] = explode(",",$str);
                     }

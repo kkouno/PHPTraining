@@ -11,6 +11,13 @@
     </head>
 
     <body>
+        <?php
+            session_start();
+            if(empty($_SERVER['HTTP_REFERER'])){
+                unset($_SESSION['reload']);
+                header('Location: query.php');
+            }
+        ?>
         <div id="wrapper">
             <!--問い合わせ内容表示-->
             <h1>お問い合わせ完了</h1>
@@ -35,21 +42,26 @@
                     if(isset($p) and is_array($p)){
                         $output .= ",";
                         foreach($p as $a){
+                            print $key.count($p);
                             if($key == "question"){
                                 $output .= $a."<br>";
                             }else{
-                                $output .= $a." ";
+                                $output .= $a.",";
                             }
                         }
-                        $output = rtrim($output);
+                        //$output = rtrim($output,",");
+                        $output = substr($output,0,-1);
                         $output = rtrim($output,"<br>");
                     }elseif($key != "submit" and $p != "送信"){
                         $output .= ",".$p;
                     }
                 }
 
-                fputs( $fp, $output."\n");
-                fclose( $fp );
+                if(isset($_SESSION['reload'])){
+                    fputs( $fp, $output."\n");
+                    fclose( $fp );
+                    unset($_SESSION['reload']);
+                }
             ?>
             <div class="center">
                 <div>お問い合わせ番号：<?= $count?></div>

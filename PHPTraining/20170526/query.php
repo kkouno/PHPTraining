@@ -14,6 +14,10 @@
 
     <body>
         <form method="post" action="confirm.php">
+            <?php
+                session_start();
+                $_SESSION['reload'] = "reload";
+            ?>
             <div id="wrapper">
                 <h1>お問い合わせ</h1>
                 <hr>
@@ -29,9 +33,12 @@
                 <div class="flex">
                     <div class="c1">性別</div>
                     <div class="c2">
-                        <input type="radio" name="gender" value="男">男
-                        <input type="radio" name="gender" value="女">女
-                        <input type="radio" name="gender" value="不明" checked="checked">不明
+                        <input class="radiobox" type="radio" name="gender" value="男" id="male">
+                        <label for="male" class="radio">男</label>
+                        <input type="radio" name="gender" value="女" id="female">
+                        <label for="female" class="radio">女</label>
+                        <input type="radio" name="gender" value="不明" checked="checked" id="unknown">
+                        <label for="unknown" class="radio">不明</label>
                     </div>
                 </div>
                 <div class="flex">
@@ -55,15 +62,20 @@
                 <div class="flex">
                     <div class="c1">どこで知ったか</div>
                     <div class="c2">
-                        <input type="checkbox" name="where[]" value="雑誌">雑誌
-                        <input type="checkbox" name="where[]" value="新聞">新聞
-                        <input type="checkbox" name="where[]" value="その他">その他
+                        <input type="hidden" name="where[0]" value="">
+                        <input type="hidden" name="where[1]" value="">
+                        <input type="hidden" name="where[2]" value="">
+                        <input type="checkbox" name="where[0]" value="雑誌" id="magazine">
+                        <label for="magazine" class="checkbox">雑誌</label>
+                        <input type="checkbox" name="where[1]" value="新聞" id="newspaper">
+                        <label for="newspaper" class="checkbox">新聞</label>
+                        <input type="checkbox" name="where[2]" value="その他" id="other">
+                        <label for="other" class="checkbox">その他</label>
                     </div>
                 </div>
 
                 <div class="flex">
                     <div class="c1">質問カテゴリ</div>
-                <!--<input type="text" name="category" size=5>-->
                     <div class="c2">
                         <select required name="category">
                             <option value="">カテゴリを選択</option>
