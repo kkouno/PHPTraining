@@ -65,13 +65,19 @@
                                 table_sort(5,SORT_ASC);
                                 break;
                             case "where":
+                                table_sort(8,SORT_DESC);
+                                table_sort(7,SORT_DESC);
                                 table_sort(6,SORT_DESC);
                                 break;
                             case "where2":
+                                table_sort(8,SORT_DESC);
+                                table_sort(6,SORT_DESC);
                                 table_sort(7,SORT_DESC);
                                 $cat = [1,0,2];
                                 break;
                             case "where3":
+                                table_sort(7,SORT_DESC);
+                                table_sort(6,SORT_DESC);
                                 table_sort(8,SORT_DESC);
                                 $cat = [2,0,1];
                                 break;
@@ -98,25 +104,29 @@
                         }
 
                         //詳細表示
-                        if(isset($_POST['button']) and $_POST['button'] === "詳細" and isset($_POST['_checkbox']) and count($_POST['_checkbox']) === 1){
+
+                        if(isset($_POST['button']) and $_POST['button'] === "詳細" and isset($_POST['_checkbox'])){
 
                             print "<caption>詳細</caption>";
-                            print "<tr><th>No.</th>";
-                            print "<th>氏名</th>";
-                            print "<th>性別</th>";
-                            print "<th>住所</th>";
-                            print "<th>電話番号</th>";
-                            print "<th>メールアドレス</th>";
-                            print "<th>どこで知ったか</th>";
-                            print "<th>質問カテゴリ</th></tr>";
-                            print "<tr class=\"exc\">";
-                            foreach(array_slice($datas[$_POST['_checkbox'][0]],0,-1) as $key => $d){
-                                print "<td align=\"center\">".$d."</td>";
+                            foreach($_POST['_checkbox'] as $i){
+                                print "<tr><th>No.</th>";
+                                print "<th>氏名</th>";
+                                print "<th>性別</th>";
+                                print "<th>住所</th>";
+                                print "<th>電話番号</th>";
+                                print "<th>メールアドレス</th>";
+                                print "<th>どこで知ったか</th>";
+                                print "<th>質問カテゴリ</th></tr>";
+                                print "<tr class=\"exc\">";
+                                foreach(array_slice($datas[$i],0,-1) as $key => $d){
+                                    print "<td align=\"center\">".$d."</td>";
+                                }
+                                print "</tr>";
+                                print "</tr>";
+                                print "<tr><th colspan=8>質問内容</th></tr>";
+                                print "<tr class=\"exc\"><td  colspan=8 align=\"center\">".array_slice($datas[$i],-1,1)[0]."</td></tr>";
+                                print "<tr class=\"exc\"><td colspan=8></td></tr>";
                             }
-                            print "</tr>";
-                            print "</tr>";
-                            print "<tr><th colspan=8>質問内容</th></tr>";
-                            print "<tr class=\"exc\"><td  colspan=8 align=\"center\">".array_slice($datas[$_POST['_checkbox'][0]],-1,1)[0]."</td></tr>";
                             print "</table>";
                             print "<input class=\"button\" type=\"submit\" value=\"戻る\">";
                             return;
@@ -150,6 +160,19 @@
                         <th>質問内容</th>
                     </tr>
                     <?php
+                        if( isset($_POST['button']) and $_POST['button'] === "検索" and isset($_POST['button'])){
+                            $n = $_POST['select'];
+                            foreach($datas as $key => $data){
+                                $word = htmlentities($_POST['search']);
+                                //$word = str_replace(" ","&nbsp;",$word);
+                                $word = str_replace(",","&#x2C",$word);
+                                if(strpos($data[$n],$word) === false){
+                                    unset($datas[$key]);
+                                }
+                            }
+                            $datas = array_values($datas);
+                        }
+
                         //削除
                         if(isset($_POST['_checkbox']) and $_POST['button'] === "削除"){
                             erase($_POST['_checkbox']);
@@ -184,8 +207,29 @@
                         fclose($fp);
                     ?>
                     </table>
+                    <?php
+                        if( isset($_POST['button']) and $_POST['button'] === "検索" and isset($_POST['button'])){
+                            print "<input class=\"button\" type=\"submit\" value=\"戻る\">";
+                            return;
+                        }
+                    ?>
+
+
                     <input class="button" type="submit" name="button" value="削除">
-                    <input class="button" type="submit" name="button" value="詳細">
+                    <input class="button" type="submit" name="button" value="詳細"><br>
+                    <select class="exc" name="select">
+                        <option value="0">No.</option>
+                        <option value="1">氏名</option>
+                        <option value="2">性別</option>
+                        <option value="3">住所</option>
+                        <option value="4">電話番号</option>
+                        <option value="5">メールアドレス</option>
+                        <option value="6">どこで知ったか</option>
+                        <option value="7">質問カテゴリ</option>
+                        <option value="8">質問内容</option>
+                    </select>
+                    <input type="text" name="search">
+                    <input class="button" type="submit" name="button" value="検索">
                 </div>
             </form>
     </body>

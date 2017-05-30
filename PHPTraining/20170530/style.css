@@ -94,7 +94,7 @@ input:checked + label {
     color: Blue;
     font-weight: bold;
 }
-select{
+select:not(.exc){
     height: 30px;
     border-width: 1px;
     border-radius: 5px;
