@@ -44,7 +44,7 @@
                 </div>
                 <div class="flex">
                     <div class="c1">住所</div>
-                    <div class="c2"><input type="text" name="address" placeholder="例：東京都○○区xx丁目△△"></div>
+                    <div class="c2"><input required type="text" name="address" placeholder="例：東京都○○区xx丁目△△"></div>
                 </div>
                 <div class="flex">
                     <div class="c1">電話番号</div>
@@ -91,7 +91,7 @@
                     <div class="c1">質問内容</div>
                 </div>
                 <div class="flex center">
-                    <div class="c2"><textarea name="question" cols="50" rows="10"></textarea></div>
+                    <div class="c2"><textarea required name="question" cols="50" rows="10"></textarea></div>
                 </div>
                 <div class="center">
                     <input class="button" type="submit" name="submit" value="確認">

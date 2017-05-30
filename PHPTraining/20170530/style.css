@@ -106,3 +106,7 @@ input.phone {
 input[name="address"] {
     width: 250px;
 }
+input:valid:not(.button),select:valid,textarea:valid {
+    border: 2px solid blue;
+    border-radius: 3px;
+}

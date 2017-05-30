@@ -155,7 +155,7 @@
                         if(isset($datas)){
                             foreach($datas as $k => $data){
                                 print "<tr>";
-                                print "<td class=\"checkbox\"><input type=\"checkbox\" name=\"_checkbox[]\" value=".$k."></td>";
+                                print "<td class=\"checkbox\"><input class=\"admin\" type=\"checkbox\" name=\"_checkbox[]\" value=".$k."></td>";
                                 foreach($data as $key => $d){
                                     //100文字以上なら省略
                                     if(strlen($d) > 100){
