@@ -109,6 +109,6 @@ input:valid:not(.button),select:valid,textarea:valid {
     border: 2px solid blue;
     border-radius: 3px;
 }
-tr:hover td{
+tr:hover:not(.exc) td{
     background-color: #00FFFF;
 }

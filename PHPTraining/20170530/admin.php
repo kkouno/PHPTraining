@@ -109,14 +109,16 @@
                             print "<th>メールアドレス</th>";
                             print "<th>どこで知ったか</th>";
                             print "<th>質問カテゴリ</th></tr>";
+                            print "<tr class=\"exc\">";
                             foreach(array_slice($datas[$_POST['_checkbox'][0]],0,-1) as $key => $d){
                                 print "<td align=\"center\">".$d."</td>";
                             }
                             print "</tr>";
+                            print "</tr>";
                             print "<tr><th colspan=8>質問内容</th></tr>";
-                            print "<td  colspan=8 align=\"center\">".array_slice($datas[$_POST['_checkbox'][0]],-1,1)[0]."</td>";
+                            print "<tr class=\"exc\"><td  colspan=8 align=\"center\">".array_slice($datas[$_POST['_checkbox'][0]],-1,1)[0]."</td></tr>";
                             print "</table>";
-                            print "<input type=\"submit\" value=\"戻る\">";
+                            print "<input class=\"button\" type=\"submit\" value=\"戻る\">";
                             return;
                         }
                     ?>
