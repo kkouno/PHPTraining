@@ -91,8 +91,9 @@
                             foreach($cat as $c){
                                 $tmp .= $data[6+$c]." ";
                             }
+                            //print $tmp."<br>";
                             array_splice($data,6,count($data)-8);
-                            array_splice($data,6,0,rtrim($tmp));
+                            array_splice($data,6,0,substr($tmp,0,-1));
                             $datas[$key] = $data;
                         }
 
@@ -173,6 +174,7 @@
                             ftruncate($fp,0);//ファイル初期化
                             foreach($datas as $key => $data){
                                 $data[6] = str_replace(" ",",",$data[6]);
+                                //print $data[6]."<br>";
                                 fputs($fp,implode(",",$data));
                             }
                             fputs($fp,$count);

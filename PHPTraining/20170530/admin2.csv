@@ -9,12 +9,12 @@
 8,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 9,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 10,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
-11,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
-12,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
-13,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
-14,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
+11,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,,その他,AAA,hogehoge&#x2Choge hoge
+12,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,,新聞,その他,AAA,hogehoge&#x2Choge hoge
+13,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,,新聞,その他,AAA,hogehoge&#x2Choge hoge
+14,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,,,AAA,hogehoge&#x2Choge hoge
 15,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
-16,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
+16,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,,,AAA,hogehoge&#x2Choge hoge
 17,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 18,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 19,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
@@ -22,3 +22,4 @@
 21,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 22,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
 23,aaa bbb,男,東京都,000-0000-0000,aaa@bbb.aaa,雑誌,新聞,その他,AAA,hogehoge&#x2Choge hoge
+28

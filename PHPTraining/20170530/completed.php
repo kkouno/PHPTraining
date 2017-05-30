@@ -45,7 +45,8 @@
                     if(isset($p) and is_array($p)){
                         if($key == "question"){
                             foreach($p as &$q){
-                                $q = htmlentities($q);
+                                $q = str_replace(",","&#x2C;",htmlentities($q));
+
                             }
                             $output .= ",".implode("<br>",$p);
                         }else{
@@ -64,6 +65,8 @@
                     fputs($fp, $output."\n");
                     unset($_SESSION['reload']);
                     fputs($fp, $count."\n");
+                }else{
+                    $count--;
                 }
                 fclose( $fp );
             ?>

@@ -90,7 +90,6 @@ input:hover + label {
     color: DeepSkyBlue;
     font-weight: bold;
 }
-
 input:checked + label {
     color: Blue;
     font-weight: bold;
@@ -109,4 +108,7 @@ input[name="address"] {
 input:valid:not(.button),select:valid,textarea:valid {
     border: 2px solid blue;
     border-radius: 3px;
+}
+tr:hover td{
+    background-color: #00FFFF;
 }
